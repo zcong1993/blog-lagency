@@ -38,6 +38,7 @@ class SiteNavi extends React.Component {
                   href={siteMetadata.github}
                   className="nav-link"
                   target="_blank"
+                  rel="noopener"
                 >
                   Github
                 </a>

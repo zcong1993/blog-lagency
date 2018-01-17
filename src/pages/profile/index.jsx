@@ -365,7 +365,11 @@ class Profile extends React.Component {
               <div className="col-md-6 text-center align-middle">
                 <h2 className="section-heading">Github</h2>
                 <p>
-                  <a href="https://github.com/zcong1993">
+                  <a
+                    href="https://github.com/zcong1993"
+                    target="_blank"
+                    rel="noopener"
+                  >
                     https://github.com/zcong1993
                   </a>
                 </p>

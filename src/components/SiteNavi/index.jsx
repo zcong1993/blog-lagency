@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import { siteMetadata } from '../../../gatsby-config'
 
 class SiteNavi extends React.Component {
   render() {
@@ -31,6 +32,15 @@ class SiteNavi extends React.Component {
                 <Link to="/profile/" className="nav-link">
                   Profile
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={siteMetadata.github}
+                  className="nav-link"
+                  target="_blank"
+                >
+                  Github
+                </a>
               </li>
             </ul>
           </div>

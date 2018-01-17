@@ -6,6 +6,7 @@ module.exports = {
     author: 'zcong1993',
     twitter: 'CongZhangDev',
     adsense: '',
+    github: 'https://github.com/zcong1993',
   },
   pathPrefix: '/',
   plugins: [

@@ -45,15 +45,15 @@ function* testGenerator(){
 
  //yield定义中间态
 
- yield &#039;first&#039;
+ yield 'first'
 
- yield &#039;second&#039;
+ yield 'second'
 
- yield &#039;third&#039;
+ yield 'third'
 
  //最终返回
 
- return &#039;last&#039;
+ return 'last'
 
 }
 
@@ -79,15 +79,15 @@ $ node generator.js
 
 //按照yield顺序输出，没有执行return时done都是false
 
-{ value: &#039;first&#039;, done: false }
+{ value: 'first', done: false }
 
-{ value: &#039;second&#039;, done: false }
+{ value: 'second', done: false }
 
-{ value: &#039;third&#039;, done: false }
+{ value: 'third', done: false }
 
 //执行到return，done变为true
 
-{ value: &#039;last&#039;, done: true }
+{ value: 'last', done: true }
 
 //执行结束后调用，value编程undefined
 
@@ -133,7 +133,7 @@ function* fb(number) {
 
  let [pre, next] = [0,1]
 
- while (number-- &gt; 0) {
+ while (number-- > 0) {
 
      [pre, next] = [next, pre + next]
 
@@ -199,7 +199,7 @@ function* arr(data) {
 
 }
 
-for (let j of arr([1, 2, [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;], 3, 4, [1, 2, 3]])) {
+for (let j of arr([1, 2, ['a', 'b', 'c'], 3, 4, [1, 2, 3]])) {
 
      console.log(j);
 
@@ -225,13 +225,13 @@ $ node generator.js
 
 ``` js
 
-const fs = require(&#039;fs&#039;)
+const fs = require('fs')
 
 //定义一个异步读文件函数
 
 function readFileAsync(file){
 
- fs.readFile(file, (err, data) =&gt; {
+ fs.readFile(file, (err, data) => {
 
      //如果有错误使用throw抛出错误
 
@@ -261,7 +261,7 @@ function* main(){
 
     //使用yield可以将异步操作使用类似于同步的方式，将next中传的data传下去
 
-     var data = yield readFileAsync(&#039;./generator.js&#039;)
+     var data = yield readFileAsync('./generator.js')
 
      console.log(data.toString())
 
@@ -295,15 +295,15 @@ it.next();
 
 //promise
 
-step1(arg).then((res1) =&gt; {
+step1(arg).then((res1) => {
 
  return step2(res1)
 
-}).then((res2) =&gt; {
+}).then((res2) => {
 
  return step3(res2)
 
-}).then((res3) =&gt; {
+}).then((res3) => {
 
  return step4(res3)
 
@@ -353,7 +353,7 @@ st.next()
 
 //引入co
 
-const co = require(&#039;co&#039;);
+const co = require('co');
 
 //通过co封装函数
 
@@ -369,11 +369,11 @@ co(function*() {
 
  //也可以用reject抛出异常
 
- // let d = yield Promise.reject(new Error(&#039;boom&#039;))
+ // let d = yield Promise.reject(new Error('boom'))
 
  console.log(a, b, c)
 
-}).catch((err) =&gt; {
+}).catch((err) => {
 
  console.log(err.message)
 
@@ -399,13 +399,13 @@ ERROR: boom
 
 ``` js
 
-&#039;use strict&#039;;
+'use strict';
 
 //引入co和fs
 
-const co = require(&#039;co&#039;);
+const co = require('co');
 
-const fs = require(&#039;fs&#039;);
+const fs = require('fs');
 
 //定义一个新的Promise对象
 
@@ -413,7 +413,7 @@ var readFileAsync = function(file) {
 
  return new Promise(function(resolve, reject) {
 
-     fs.readFile(file, (err, data) =&gt; {
+     fs.readFile(file, (err, data) => {
 
          if (err) reject(err);
 
@@ -425,11 +425,11 @@ var readFileAsync = function(file) {
 
 };
 
-let file = &#039;./promise.js&#039;;
+let file = './promise.js';
 
-let file1 = &#039;./async.js&#039;;
+let file1 = './async.js';
 
-let file2 = &#039;./error.js&#039;;
+let file2 = './error.js';
 
 //co支持正常try catch
 
@@ -467,7 +467,7 @@ co(function*() {
 
  console.log(data);
 
-}).catch((err) =&gt; {
+}).catch((err) => {
 
      console.log(err.message);
 
@@ -481,19 +481,19 @@ co(function*() {
 
 ``` js
 
-&#039;use strict&#039;;
+'use strict';
 
 //引入node-fetch和co
 
-const fetch = require(&#039;node-fetch&#039;);
+const fetch = require('node-fetch');
 
-const co = require(&#039;co&#039;);
+const co = require('co');
 
 //我们fetch请求的url
 
-const url = &#039;https://api.github.com/users/zcong1993&#039;;
+const url = 'https://api.github.com/users/zcong1993';
 
-const url1 = &#039;https://api.github.com/users/zcong1993/following&#039;;
+const url1 = 'https://api.github.com/users/zcong1993/following';
 
 //使用fetch请求
 

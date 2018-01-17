@@ -111,7 +111,7 @@ PI = 3.141
 对于对象或者数组，我们有时需要将它们的某些部分赋值给不同的变量，这时我们往往会这样写：
 
 ```js
-var obj = { name: &#039;zcong&#039;, age: 18}
+var obj = { name: 'zcong', age: 18}
 
 var name = obj.name
 
@@ -126,7 +126,7 @@ console.log(name, age)
 而在es6中我们可以这么写：
 
 ``` js
-let obj = { name: &#039;zcong&#039;, age: 18}
+let obj = { name: 'zcong', age: 18}
 
 let { name, age } = obj
 
@@ -139,10 +139,8 @@ console.log(name, age)
 这点在引入外部库的不同模块时时经常用到。
 
 ```js
-import { part1, part2} from &#039;lib&#039;
+import { part1, part2} from 'lib'
 
 ```
 
 ---
-
-

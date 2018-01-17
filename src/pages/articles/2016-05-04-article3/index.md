@@ -4,13 +4,17 @@ date: "2016-05-04"
 layout: post
 path: "/article3/"
 categories:
-  - default
+  - PHP
+  - 扯淡
+  - 新手
 ---
 
 今天编写了一个简单的登陆页面，觉得以后肯定会用到，现在练练。、
 
 遇到了不少问题，验证那些都好说，主要问题就在cookie上面。对于cookie和session大家肯定都很熟悉，一般来说一个存在服务器一个存在客户端。用户要想保持登陆状态，我们就需要设置cookie。然后在页面验证cookie是否存在，不存在提示用户登陆。
 
+<!--more-->
+
 在测试的时候，发现设置好cookie之后，老是没有效果，在页面调试输出也没有值。自己琢磨了好久，发现了问题。最重要的问题是设置cookie是与某个页面对应的，我的程序是ajax验证登陆之后有个回调函数验证session或者cookie是否存在，然后跳转到相应页面，也就是说我在这个页面设置的cookie，然后关闭浏览器去重定向的页面测试，肯定没有cookie。
 
-犯了个很蠢的错误！！！<img class="alignnone size-medium wp-image-34" src="http://104.238.222.34/zcong/wp-content/uploads/2016/05/2016-05-0480-300x169.jpg" alt="bz1080p.com_2015-05-05_08-01-14" width="300" height="169" />
+犯了个很蠢的错误！！！

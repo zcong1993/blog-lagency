@@ -35,7 +35,7 @@ namespace Demo\Bar;
 
 class Dog{
     public static function index() {
-        echo &#039;Demo Bar Dog !&#039;.&quot;\n&quot;;
+        echo 'Demo Bar Dog !'."\n";
     }
 }
 ```
@@ -44,7 +44,7 @@ class Dog{
 使用命名空间，以`app/Test1.php`为例：
 ```php
 //引入所有用到的文件
-require(&quot;all files&quot;);
+require("all files");
 
 use Demo\Foo\Dog as FooDog; //为引入类定义别名，以防冲突
 use Demo\Foo\Fish;
@@ -71,9 +71,9 @@ BarDog::index();
 在项目根目录新建文件`composer.json`，已存在就修改即可：
 ```json
 {
-    &quot;autoload&quot;: {
-        &quot;psr-4&quot;: {
-            &quot;Demo\\&quot;: &quot;src/&quot;
+    "autoload": {
+        "psr-4": {
+            "Demo\\": "src/"
         }
     }
 }
@@ -86,15 +86,8 @@ $ composer dump-autoload
 
 #### phpab
 
-此方法非常轻量级，需要我们安装`phpab.phar`，链接[phpab][1]。然后命令行运行：
+此方法非常轻量级，需要我们安装`phpab.phar`，链接[phpab][https://github.com/theseer/Autoload]。然后命令行运行：
 ```bash
 $ php phpab.phar -o src/autoload.php src
 ```
 即可在`src`目录下生成一个`autoload.php`文件，引入即可。
-
-
-
-[^psr-4]: 这里不介绍原理，请自行Google。
-
-
-  [1]: https://github.com/theseer/Autoload

@@ -4,7 +4,11 @@ date: "2016-08-10"
 layout: post
 path: "/db-api-0-9/"
 categories:
-  - default
+  - PHP
+  - Database
+  - Admin
+  - API
+  - 扯淡
 ---
 
 ### DB_api 文档
@@ -16,11 +20,13 @@ categories:
     static private $dbConfig = array(
         'host'      => '127.0.0.1',     #地址
         'username'  => 'zcong',         #用户名
-        'passwd'    => 'zc1993',        #密码
+        'passwd'    => '****',        #密码
         'database'  => 'zctest',        #启用数据库名称
         'type'      => 'mysql',         #数据库类型，默认
         'port'      => 3306             #端口号，默认
     );
+
+<!--more-->
 
 请求的入口文件是`db_api.php`
 
@@ -29,7 +35,7 @@ categories:
         find        #可以自定义返回的列
         insert      #插入数据
         update      #更新数据
-        delete      #删除数据，仅支持通过主键删除 
+        delete      #删除数据，仅支持通过主键删除
 
 消息格式:`{"code":200,"msg":"find_all success","data":data }`,`code`是状态码 `msg`提示信息 `data`真正返回的数据。
 
@@ -46,7 +52,7 @@ categories:
 #### 基本操作(method)
 
 > - `get_meta` 查询表中全部字段，以及`dom类型`
-		
+
 		url:  http://154.16.166.38/sql/db_api.php?table_name=<表名>&method=<方法>
 		参数：table_name 表名(必须) method 方法(必须)
 		返回值：object,key(字段名):value(text|textarea)暂时只有两种，text表示['int','tinyint','float','char','varchar','bool','date']中的类型，可以直接用input显示，而textarea则表示建议使用textarea显示
@@ -54,7 +60,7 @@ categories:
 
 > - `find_all` 查询全部字段
 
-        url: http://154.16.166.38/sql/db_api.php?table_name=<表名>&method=<方法>&limit=<长度>&where=<条件>&order=<排序>&desc=<是否降序排序> 
+        url: http://154.16.166.38/sql/db_api.php?table_name=<表名>&method=<方法>&limit=<长度>&where=<条件>&order=<排序>&desc=<是否降序排序>
         参数: table_name 表名(必须) method 方法(必须)
             limit 长度(选填),默认为所有,<1的值相当于查询所有
             where 条件(选填),默认为空,格式为{条件1,条件2...}默认以&&连接

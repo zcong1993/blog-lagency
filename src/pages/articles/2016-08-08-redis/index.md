@@ -4,7 +4,8 @@ date: "2016-08-08"
 layout: post
 path: "/redis/"
 categories:
-  - default
+  - PHP
+  - Redis
 ---
 
 #### ubuntu 系统
@@ -17,12 +18,14 @@ $apt-get install redis-server   #服务端
 ```
 安装的版本应该是2.8左右，redis最新的稳定版本是`3.2.3`。
 
+<!--more-->
+
 >安装最新版本：
 
     $ wget http://download.redis.io/releases/redis-3.2.3.tar.gz
     $ tar xzf redis-3.2.3.tar.gz
     $ cd redis-3.2.3
-    $ make 
+    $ make
     #这样就安装成功了,建议再做以下处理
     $ cd redis-3.2.3
     $ cp ./src/redis-* /usr/bin/   #将服务文件放置在 /usr/bin
@@ -37,7 +40,7 @@ $apt-get install redis-server   #服务端
     $ wget http://download.redis.io/releases/redis-3.2.3.tar.gz
     $ tar xzf redis-3.2.3.tar.gz
     $ cd redis-3.2.3
-    $ make 
+    $ make
 
 脚本会自动在`/usr/bin`中生成`redis`目录，包含`bin`(核心文件)和`etc`(配置文件)，还会在`/etc/init.d/`中生成`redis`的脚本，此时直接用`service redis start|stop|restart`对redis服务端进行操作了，理论上可以全局使用`redis-cli`启动客户端了。
 

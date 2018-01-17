@@ -4,12 +4,15 @@ date: "2016-08-26"
 layout: post
 path: "/install-mongodb/"
 categories:
-  - default
+  - Database
+  - MongoDB
 ---
 
 #### 一款非常实用的 **nosql** 数据库。
 
 [mongodb](https://www.mongodb.com/)具体介绍可以去官方网站了解，这里就不过多介绍了。
+
+<!--more-->
 
 ***
 
@@ -29,9 +32,9 @@ D:\DATA
 ├─db
 └─log
  ```
- 
+
  db目录用来存放数据，cfg目录存放启动相关配置文件，log目录存放运行日志文件。接着在cfg文件夹创建一个`mongo.cfg`配置文件：
- 
+
  ```sh
  #cfg/mongo.cfg
  systemLog:
@@ -64,7 +67,7 @@ pause
 ```
 双击打开就可以启动数据库服务了。
 
-##### 2.ubuntu系统  
+##### 2.ubuntu系统
 
 linux系统可以选择去github上面下载软件源码自行编译安装，我试了，很遗憾因为依赖问题放弃了。最终还是选择了官方的镜像源安装。
 
@@ -113,4 +116,4 @@ WantedBy=multi-user.target
 ```
 简单说明一下，mongodb中数据库和表不用提前建立，`use 数据库`的时候直接建立，并切换至数据库，`show dbs`可以查询所有数据库，在数据库下面`show collections`可以查看数据集（相当于数据表，个人理解）。
 
-具体操作请查看官方文档。 
+具体操作请查看官方文档。

@@ -4,7 +4,8 @@ date: "2016-07-28"
 layout: post
 path: "/learning-webpack/"
 categories:
-  - default
+  - JavaScript
+  - Webpack
 ---
 
 <h3>webpack</h3>

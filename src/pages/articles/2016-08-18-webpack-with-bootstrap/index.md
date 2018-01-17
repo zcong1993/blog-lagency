@@ -4,14 +4,19 @@ date: "2016-08-18"
 layout: post
 path: "/webpack-with-bootstrap/"
 categories:
-  - default
+  - JavaScript
+  - 前端
+  - Webpack
+  - Bootstrap
 ---
 
 代码github地址：[https://github.com/zcong1993/webpack-bootstrap-demo](https://github.com/zcong1993/webpack-bootstrap-demo)
 
 页面预览地址: [https://zcong1993.github.io/webpack-bootstrap-demo/](https://zcong1993.github.io/webpack-bootstrap-demo/)
 
-*** 
+<!--more-->
+
+***
 
 ### 简单说明
 
@@ -30,7 +35,7 @@ node强大的npm工具使得使用js库变得非常容易，可以使用`$npm in
 ### 配置过程
 
 * 加载css文件
-  
+
   首先需要安装webpack和webpack-dev-server
   ```sh
   $npm install --save-dev webpack webpack-dev-server
@@ -139,10 +144,10 @@ node强大的npm工具使得使用js库变得非常容易，可以使用`$npm in
   ```
   可以看到我们仅引入了`bundle.js`文件，`css`根本就没有，运行dev测试：
   ```sh
-  $webpack-dev-server 
+  $webpack-dev-server
   ```
   此时可以看到，bootstrap样式已经被引入了。
-  
+
 * 加载js文件
 
   bootstrap还有自己的一些js文件处理交互事件，如果需要的话，引入js。
@@ -157,7 +162,7 @@ node强大的npm工具使得使用js库变得非常容易，可以使用`$npm in
   $webpack-dev-server
   ```
   出现新问题,jQuery没有定义，bootstrap依赖的jquery没有，所以我们要处理jquery依赖问题。
-  
+
 * 处理jquery依赖
 
   引入jquery
@@ -177,12 +182,12 @@ node强大的npm工具使得使用js库变得非常容易，可以使用`$npm in
   $webpack-dev-server
   ```
   可以看到css样式正常，js也不会报错了。
-  
+
 * 打包
 
   其实我们这个连脚手架都不算，所以没必要打包，可以打包看看离线效果。
   ```sh
-  $webpack -p 
+  $webpack -p
   ```
   然后app目录就是整个web程序了，直接访问app/index.html就能看到相同的效果了。
 

@@ -4,10 +4,13 @@ date: "2016-08-05"
 layout: post
 path: "/apache-muilts-1/"
 categories:
-  - default
+  - Server
+  - Apache2
 ---
 
 一般的个人服务器性能都不是很高，并发高一点就很难应付，而且在黑客攻击面前显得十分脆弱。单IP并发限制和流量限制会有效防止并发高时服务器内存被耗尽甚至拉死的情况，也使得单IP攻击不是那么有效。
+
+<!--more-->
 
 - Apache的配置：
 

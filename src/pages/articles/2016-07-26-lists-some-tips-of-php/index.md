@@ -4,7 +4,8 @@ date: "2016-07-26"
 layout: post
 path: "/lists-some-tips-of-php/"
 categories:
-  - default
+  - Github
+  - Gh-pages
 ---
 
 <blockquote>

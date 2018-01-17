@@ -4,12 +4,11 @@ date: "2016-05-01"
 layout: post
 path: "/article2/"
 categories:
-  - default
+  - Linux
+  - 新手
+  - 第一次
 ---
 
-<img class="size-medium wp-image-21 aligncenter" src="http://104.238.222.34/zcong/wp-content/uploads/2016/04/2016-04-2910-300x169.jpg" alt="tamako" width="300" height="169" />
-
-&nbsp;
 
 在移动硬盘安装linux系统，遇到了非常多的问题，也经历了无数次尝试，版本用了4种，最终还是选择了稳定的14.04版本，自己的硬盘不知道被格式化了多少次。最终成功安装了ubuntu14.04版本。
 

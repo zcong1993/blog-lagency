@@ -4,7 +4,10 @@ date: "2016-08-30"
 layout: post
 path: "/proxy-with-apache2/"
 categories:
-  - default
+  - Server
+  - Apache2
+  - Proxy
+  - 子域名
 ---
 
 ##### 将node服务非80端口的程序映射到一个二级或一级域名
@@ -12,6 +15,8 @@ categories:
 ***
 
 最近在尝试着用node作为后端服务。由于服务器还装有Apache，默认端口80被占用，虽然node可以将服务器启动在任意端口，这样可以用域名加端口号访问，但是还是不太方便，于是就想到了用代理解决这个问题。
+
+<!--more-->
 
 ***
 
@@ -72,4 +77,4 @@ $service apache2 restart
 1. 直接访问这个域名会出现`503 Service Unavailable`，因为我们没有开服务3000端口没有东西；
 2. 打开服务，用node起一个3000端口的服务，访问域名便和访问`zcong.xyz:3000`的结果一样。
 
-<img src="http://blog.zcong.win/wp-content/uploads/2016/08/proxy.png" alt="proxy" width="746" height="452" class="alignnone size-full wp-image-568" />
+<img src="proxy.png" alt="proxy" width="746" height="452" />

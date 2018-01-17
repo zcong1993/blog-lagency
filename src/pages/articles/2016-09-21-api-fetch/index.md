@@ -1,10 +1,12 @@
 ---
-title: fetch api &amp; http request
+title: fetch api & http request
 date: "2016-09-21"
 layout: post
 path: "/api-fetch/"
 categories:
-  - default
+  - JavaScript
+  - Fetch
+  - Http
 ---
 
 ---
@@ -14,6 +16,8 @@ categories:
 * fetch 开启一个获取源资源的进程
 
   上面这句话便是[MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalFetch)对fetch的定义，简单精炼，就和它的功能一样，简单而强大。**\(注意：目前仅有chrome,firefox,opera的最新浏览器中支持\)**
+
+<!--more-->
 
   首先我们需要看一个简单的例子：
 
@@ -102,7 +106,7 @@ categories:
 
 * 发一个post请求
 
-    
+
 
     进行post请求也就是将第二个字段的`method`改为`POST`，然后增加`body`字段传输数据，有些情况需要在`headers`中增加一些字段。
 
@@ -184,7 +188,7 @@ categories:
 
             res.json().then((json) => {
 
-                console.log(json)    
+                console.log(json)
 
             })
 
@@ -212,7 +216,7 @@ categories:
 ``` bash
 # isomorphic-fetch和node-fetch选择一个就行
 
-npm install co node-fetch isomorphic-fetch 
+npm install co node-fetch isomorphic-fetch
 
 ```
 

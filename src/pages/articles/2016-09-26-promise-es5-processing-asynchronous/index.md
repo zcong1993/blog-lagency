@@ -4,13 +4,16 @@ date: "2016-09-26"
 layout: post
 path: "/promise-es5-processing-asynchronous/"
 categories:
-  - default
+  - JavaScript
+  - ES5
+  - Promise
 ---
 
 > [范例源码地址](https://github.com/zcong1993/promise-generator-async)(比较混乱，抱歉)
 
 > [GitBook排版更好](https://zcong.gitbooks.io/zc-webapp/content/promise-generator-asyncawait.html)
 
+<!--more-->
 ---
 
 ### 认识Promise对象
@@ -37,13 +40,13 @@ Promise对象的生命周期只有3种状态：
 
 1. 首先实例化一个`Promise`对象：
 ``` js
-const fs = require(&#039;fs&#039;)
+const fs = require('fs')
 //定义一个readFileAsync函数
 let readFileAsync = function(file) {
     //直接返回一个Promise对象
     return new Promise(function(resolve, reject) {
      //使用readFile函数
-     fs.readFile(file, (err, data) =&gt; {
+     fs.readFile(file, (err, data) => {
         //如果有错误传给reject
      if (err) reject(err);
         //成功时，用resolve将结果传递下去
@@ -55,10 +58,10 @@ let readFileAsync = function(file) {
 2. 使用`eadFileAsync`处理异步：
 ``` js
 //由于then出来的data已经是一个buffer数据而不再是promise对象，所以不用再往下then操作
-readFileAsync(file).then((data) =&gt; {
+readFileAsync(file).then((data) => {
     //处理成功时读取到文件的data
  console.log(data.toString());
-}).catch((err) =&gt; {
+}).catch((err) => {
     //处理reject抛出的异常
  console.log(err.message)
 });
@@ -73,17 +76,17 @@ readFileAsync(file).then((data) =&gt; {
 > 以`nodejs`中的`fetch`请求为例(`fetch()`本身就是一个`Promise`对象，所以直接可以用`.then()`方法)：
 
 ``` js
-const fetch = require(&#039;node-fetch&#039;);
-const url = &#039;https://api.github.com/users/zcong1993&#039;;
+const fetch = require('node-fetch');
+const url = 'https://api.github.com/users/zcong1993';
 //使用fetch通过get请求请求url
 fetch(url)
     //fetch请求的结果的.json()返回的依然是Promise对象
- .then((res) =&gt; res.json())
+ .then((res) => res.json())
     //将得到的json数据输出
- .then((data) =&gt; {
+ .then((data) => {
      console.log(data)
- }).catch((err) =&gt; {   
-     //处理reject抛出的异常 
+ }).catch((err) => {
+     //处理reject抛出的异常
     console.log(err.message)
  });
 ```
@@ -99,11 +102,11 @@ fetch(url)
 ``` js
     $(function(){
         //通过Promoise.resolve()方法get请求api得到数据
-        Promise.resolve($.get(&#039;https://api.github.com/users/zcong1993&#039;))
+        Promise.resolve($.get('https://api.github.com/users/zcong1993'))
             //将得到的数据通过post请求发送给另一个url
-            .then(res =&gt; $.post(&#039;http://zcong.win/api/ajax.php&#039;, res))
+            .then(res => $.post('http://zcong.win/api/ajax.php', res))
             //处理得到的结果
-            .then(res =&gt; {
+            .then(res => {
                 console.log(res)
             })
     })
@@ -146,7 +149,7 @@ Promise.all([
 
 运行结果如下：
 
->　<img src="http://blog.zcong.win/wp-content/uploads/2016/09/promise.png" alt="promise" width="401" height="135" class="alignnone size-full wp-image-586" />
+<img src="promise.png" alt="promise" width="401" height="135" />
 
 可以看到，函数同时被执行了3次，之后结果都被输出出来了。
 

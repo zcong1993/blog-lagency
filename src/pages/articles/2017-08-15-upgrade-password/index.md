@@ -29,9 +29,10 @@ categories:
 
 当然也是这种思路。开始我的想法是改写laravel的Auth，最后感觉没有必要，这里只是Hash的工作，加一个自己的Hash就行了。
 
+
 ```php
 // app/Libiraries/CustomHasher.php
-&lt;?php
+<?php
 
 namespace App\Libraries;
 use App\User;
@@ -43,11 +44,11 @@ class CustomHasher extends BcryptHasher
     public function check($value, $hashedValue, array $options = [])
     {
         if (!password_verify($value, $hashedValue)) {
-            $user = User::wherePassword($hashedValue)-&gt;first();
-            if ($user &amp;&amp; $this-&gt;old_hash_check($value, $hashedValue)) {
+            $user = User::wherePassword($hashedValue)->first();
+            if ($user && $this->old_hash_check($value, $hashedValue)) {
                 // password use old hash method, update it
-                $user-&gt;password = \Hash::make($value);
-                $user-&gt;save();
+                $user->password = \Hash::make($value);
+                $user->save();
                 return true;
             }
         }
@@ -64,7 +65,7 @@ class CustomHasher extends BcryptHasher
 
 ```php
 // app/Providers/HashServiceProvider.php
-&lt;?php
+<?php
 
 namespace App\Providers;
 use App\Libraries\CustomHasher;
@@ -75,22 +76,22 @@ class HashServiceProvider extends Provider
 {
     public function register ()
     {
-        $this-&gt;app-&gt;singleton(&#039;hash&#039;, function () {
+        $this->app->singleton('hash', function () {
             return new CustomHasher;
         });
     }
 
     public function provides ()
     {
-        return [&#039;hash&#039;];
+        return ['hash'];
     }
 }
 ```
 ```php
 // config/app.php
-&lt;?php
+<?php
 ...
-&#039;providers&#039; =&gt; [
+'providers' => [
     // custom hash provider
     App\Providers\HashServiceProvider::class,
 ]

@@ -47,7 +47,7 @@ jobs:
       - *save_cache
       - run:
           name: build
-          command: build:prod
+          command: yarn build:prod
       - store_artifacts:
           path: /root/blog/public
       - persist_to_workspace:

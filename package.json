@@ -36,7 +36,7 @@
     "animate.css": "^3.5.2",
     "babel-eslint": "^8.0.3",
     "bootstrap": "4.0.0-beta.2",
-    "devicon": "https://github.com/konpa/devicon.git#v2.2",
+    "devicon-2.2": "^2.2.0",
     "emergence.js": "^1.1.2",
     "eslint": "^4.13.0",
     "eslint-config-prettier": "^2.9.0",

@@ -38,20 +38,20 @@ class Profile extends React.Component {
           <div className="container">
             <img
               src={pathPrefix + '/img/profile.jpg'}
-              alt="jaxx2104"
+              alt="zcong1993"
               className="rounded-circle mx-auto d-block"
               width="120px"
             />
-            <h1>jaxx2104</h1>
-            <p className="lead text-muted">コーラとバグが好き</p>
+            <h1>zcong1993</h1>
+            <p className="lead text-muted">沉迷编程</p>
             <div>
               <a
                 ref="twButton"
-                href="https://twitter.com/jaxx2104"
+                href="https://twitter.com/CongZhangDev"
                 className="twitter-follow-button"
                 data-show-count="false"
               >
-                Follow @jaxx2104
+                Follow @CongZhangDev
               </a>
             </div>
           </div>
@@ -61,7 +61,7 @@ class Profile extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
-                <h2 className="section-heading">SKIL</h2>
+                <h2 className="section-heading">SKILLS</h2>
                 <hr className="border-white" />
               </div>
             </div>
@@ -73,9 +73,12 @@ class Profile extends React.Component {
                   className="service-box"
                   data-toggle="tooltip"
                   data-placement="top"
-                  title="HTML"
+                  title="JavaScript"
                 >
-                  <i className="devicon-html5-plain " data-emergence="hidden" />
+                  <i
+                    className="devicon-javascript-plain"
+                    data-emergence="hidden"
+                  />
                 </div>
               </div>
               <div className="col-lg-3 col-6">
@@ -83,10 +86,10 @@ class Profile extends React.Component {
                   className="service-box"
                   data-toggle="tooltip"
                   data-placement="top"
-                  title="JavaScript"
+                  title="Node.js"
                 >
                   <i
-                    className="devicon-javascript-plain"
+                    className="devicon-nodejs-plain-wordmark"
                     data-emergence="hidden"
                   />
                 </div>
@@ -121,10 +124,106 @@ class Profile extends React.Component {
                   className="service-box"
                   data-toggle="tooltip"
                   data-placement="top"
-                  title="Node.js"
+                  title="Docker"
+                >
+                  <i className="devicon-docker-plain" data-emergence="hidden" />
+                </div>
+              </div>
+              <div className="col-lg-3 col-6 ">
+                <div
+                  className="service-box"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Express"
                 >
                   <i
-                    className="devicon-nodejs-plain-wordmark"
+                    className="devicon-express-original"
+                    data-emergence="hidden"
+                  />
+                </div>
+              </div>
+              <div className="col-lg-3 col-6 ">
+                <div
+                  className="service-box"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Git"
+                >
+                  <i className="devicon-git-plain" data-emergence="hidden" />
+                </div>
+              </div>
+              <div className="col-lg-3 col-6 ">
+                <div
+                  className="service-box"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Golang"
+                >
+                  <i className="devicon-go-plain" data-emergence="hidden" />
+                </div>
+              </div>
+            </div>
+            <div className="row justify-content-md-center">
+              <div className="col-lg-3 col-6">
+                <div
+                  className="service-box"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Laravel"
+                >
+                  <i
+                    className="devicon-laravel-plain"
+                    data-emergence="hidden"
+                  />
+                </div>
+              </div>
+              <div className="col-lg-3 col-6 ">
+                <div
+                  className="service-box"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Linux"
+                >
+                  <i className="devicon-linux-plain" data-emergence="hidden" />
+                </div>
+              </div>
+              <div className="col-lg-3 col-6 ">
+                <div
+                  className="service-box"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Mongodb"
+                >
+                  <i
+                    className="devicon-mongodb-plain"
+                    data-emergence="hidden"
+                  />
+                </div>
+              </div>
+              <div className="col-lg-3 col-6 ">
+                <div
+                  className="service-box"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="MySQL"
+                >
+                  <i
+                    className="devicon-mysql-plain-wordmark"
+                    data-emergence="hidden"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="row justify-content-md-center">
+              <div className="col-lg-3 col-6">
+                <div
+                  className="service-box"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Nginx"
+                >
+                  <i
+                    className="devicon-nginx-original"
                     data-emergence="hidden"
                   />
                 </div>
@@ -144,10 +243,10 @@ class Profile extends React.Component {
                   className="service-box"
                   data-toggle="tooltip"
                   data-placement="top"
-                  title="Swift"
+                  title="Webpack"
                 >
                   <i
-                    className="devicon-swift-plain-wordmark"
+                    className="devicon-webpack-plain"
                     data-emergence="hidden"
                   />
                 </div>
@@ -157,10 +256,10 @@ class Profile extends React.Component {
                   className="service-box"
                   data-toggle="tooltip"
                   data-placement="top"
-                  title="AWS"
+                  title="TypeScript"
                 >
                   <i
-                    className="devicon-amazonwebservices-plain-wordmark"
+                    className="devicon-typescript-plain"
                     data-emergence="hidden"
                   />
                 </div>
@@ -182,9 +281,9 @@ class Profile extends React.Component {
             <div className="row justify-content-md-center">
               <div className="col-lg-8">
                 <p>
-                  学生時代のバイトでWEBエンジニアになりました。<br />
-                  主にフロントエンドを仕事にしていますが、バックエンドの開発もやってます。
-                  趣味はNode.jsを使ったIoTとアプリの開発です。
+                  西安交大学渣一枚, 半路出家 PHP。<br />
+                  学了学 Node.js , 也算半个不会 css 的前端。<br />
+                  Golang 萌新一个。
                 </p>
               </div>
             </div>
@@ -233,21 +332,19 @@ class Profile extends React.Component {
               </div>
               <div className="col-md-6 text-left">
                 <li>
-                  <a href="https://github.com/jaxx2104/gatsby-starter-bootstrap">
-                    gatstrap
+                  <a href="https://github.com/gost-c/gost">gost</a>
+                </li>
+                <li>
+                  <a href="https://github.com/gost-c/gost-cli">gost-cli</a>
+                </li>
+                <li>
+                  <a href="https://github.com/zcong1993/neutrino-middleware-styles-loader">
+                    neutrino-middleware-styles-loader
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/jaxx2104/gulp-sample">
-                    gulp-sample
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/jaxx2104/irm">irm</a>
-                </li>
-                <li>
-                  <a href="https://github.com/jaxx2104/mt-dataapi-php">
-                    mt-dataapi-php
+                  <a href="https://github.com/zcong1993/template-react">
+                    template-react
                   </a>
                 </li>
               </div>
@@ -266,9 +363,11 @@ class Profile extends React.Component {
                 />
               </div>
               <div className="col-md-6 text-center align-middle">
-                <h2 className="section-heading">Degree Works</h2>
+                <h2 className="section-heading">Github</h2>
                 <p>
-                  過去の制作は<a href="https://old.jaxx2104.info/">こちら</a>
+                  <a href="https://github.com/zcong1993">
+                    https://github.com/zcong1993
+                  </a>
                 </p>
               </div>
             </div>

@@ -6,3 +6,4 @@ public
 .cache/
 .vscode/
 yarn.lock
+*.log

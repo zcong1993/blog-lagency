@@ -1,0 +1,87 @@
+default: &default
+  workdir_root: &workdir_root
+    /root/blog
+
+  docker:
+    - image: node:8.9.4
+  working_directory: *workdir_root
+
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workdir_root
+
+  restore_cache: &restore_cache
+    restore_cache:
+      keys:
+        - v1-dependencies-{{ checksum "package.json" }}
+        # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
+
+  save_cache: &save_cache
+    save_cache:
+      paths:
+        - node_modules
+      key: v1-dependencies-{{ checksum "package.json" }}
+
+version: 2
+jobs:
+  test:
+    <<: *default
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - *restore_cache
+      - run: yarn
+      - *save_cache
+      - run:
+          name: test
+          command: yarn test
+
+  build:
+    <<: *default
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - *restore_cache
+      - run: yarn
+      - *save_cache
+      - run:
+          name: build
+          command: build:prod
+      - store_artifacts:
+          path: /root/blog/public
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory
+          root: *workdir_root
+          # Must be relative path from root
+          paths:
+            - public
+
+  deploy:
+    <<: *default
+    steps:
+      - checkout
+      - *restore_cache
+      - *attach_workspace
+      - run:
+          name: push to production
+          command: |
+            npm install -g netlify-cli
+            netlify deploy -p public -s 9d01f18d-f06e-44ad-bc31-ba507e37f2b5 -t $NETLIFY_TOKEN
+      - *save_cache
+
+workflows:
+  version: 2
+  build-n-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+      - deploy:
+          context: org-global
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

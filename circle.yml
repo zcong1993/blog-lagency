@@ -13,7 +13,7 @@ default: &default
   restore_cache: &restore_cache
     restore_cache:
       keys:
-        - v1-dependencies-{{ checksum "package.json" }}
+        - v1-dependencies-{{ checksum "yarn.lock" }}
         # fallback to using the latest cache if no exact match is found
         - v1-dependencies-
 
@@ -21,7 +21,7 @@ default: &default
     save_cache:
       paths:
         - node_modules
-      key: v1-dependencies-{{ checksum "package.json" }}
+      key: v1-dependencies-{{ checksum "yarn.lock" }}
 
 version: 2
 jobs:

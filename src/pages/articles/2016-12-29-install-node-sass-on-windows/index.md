@@ -18,7 +18,7 @@ categories:
 
 ### 主要原因
 
-安装`node-sass`时需要一个适配系统的二进制包[xxx_binding.node](https://github.com/sass/node-sass/releases)，这个包足以触发`npm`的timeout，使得安装失败。
+安装`node-sass`时需要一个适配系统的二进制包[xxx_binding.node](https://github.com/sass/node-sass/releases)，这个包足以触发`npm`的 timeout，使得安装失败。
 
 ### 解决方法
 

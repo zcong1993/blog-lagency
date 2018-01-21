@@ -92,7 +92,7 @@ db.table('users')
 
 ## 定义dataloader
 
-dataloader相当于model，只不过功能非常单一。
+dataloader 相当于 model，只不过功能非常单一。
 
 比如，定义一个`select user by id`：
 ```js
@@ -102,11 +102,11 @@ const user = new Dataloader(ids => db.table('users')
 )
 // 相当于语句 `select * from users where in (...ids)`
 ```
-使用`user.load(id)`可以得到相应的id的数据，相当于`promise`类型， `user.loadMany([1, 2, 3])`可以得到id为1， 2， 3的三条记录，相当于`Promise.all([user.load(1), user.load(2), user.load(3)])`， 官方文档也有说明这点。
+使用`user.load(id)`可以得到相应的 id 的数据，相当于`promise`类型， `user.loadMany([1, 2, 3])`可以得到 id 为 1， 2， 3 的三条记录，相当于`Promise.all([user.load(1), user.load(2), user.load(3)])`， 官方文档也有说明这点。
 
 ## 问题
 
-查询单挑记录没有任何问题，但是看到查询多条数据用的是`Promise.all()`，因此查询是并行的，所以结果顺序会混乱，与我们期望的不相符。所以我们需要写一个helper函数。
+查询单挑记录没有任何问题，但是看到查询多条数据用的是`Promise.all()`，因此查询是并行的，所以结果顺序会混乱，与我们期望的不相符。所以我们需要写一个 helper 函数。
 ```js
 // 增加__type类型字段
 function assignType(obj, type) {
@@ -121,7 +121,7 @@ function mapTo(keys, keyFn, type, rows) {
   return Array.from(group.values())
 }
 ```
-改造dataloader
+改造 dataloader
 ```js
 exports.user = new Dataloader(ids => db.table('users')
   .whereIn('id', ids)

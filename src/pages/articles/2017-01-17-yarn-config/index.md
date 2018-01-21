@@ -22,7 +22,7 @@ cnpm
 yarn
 ---
 
-yarn 是Facebook做的包管理工具，理念就是快！我是从它刚出来就开始使用的。但是想说的是它再快在GFW下也没办法，所以我们可以让yarn使用淘宝镜像源。
+yarn 是 Facebook 做的包管理工具，理念就是快！我是从它刚出来就开始使用的。但是想说的是它再快在 GFW 下也没办法，所以我们可以让 yarn 使用淘宝镜像源。
 ```sh
 $ yarn config set registry https://registry.npm.taobao.org
 ```
@@ -30,7 +30,7 @@ $ yarn config set registry https://registry.npm.taobao.org
 
 但是，凡事都有但是，在[淘宝开源镜像站](https://npm.taobao.org/mirrors)，可以看到有很多东西，比如`phantomjs`, `node-sass`， `fsevents`。。。
 
-如果你使用过上面的3个，你应该体会到了，安装是有多难了吧，因为这些项目安装会安装二进制的安装包，这些基本放在github上托管，所以基本都会下载不下来。
+如果你使用过上面的 3 个，你应该体会到了，安装是有多难了吧，因为这些项目安装会安装二进制的安装包，这些基本放在 github 上托管，所以基本都会下载不下来。
 
 .yarnrc .npmrc
 ---

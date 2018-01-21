@@ -15,7 +15,7 @@ categories:
 
 * fetch 开启一个获取源资源的进程
 
-  上面这句话便是[MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalFetch)对fetch的定义，简单精炼，就和它的功能一样，简单而强大。**\(注意：目前仅有chrome,firefox,opera的最新浏览器中支持\)**
+  上面这句话便是[MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalFetch)对 fetch 的定义，简单精炼，就和它的功能一样，简单而强大。**\(注意：目前仅有 chrome,firefox,opera 的最新浏览器中支持\)**
 
 <!--more-->
 
@@ -38,11 +38,11 @@ categories:
 
   ```
 
-  这段代码做的就是简单的异步加载本地图片，如果在chrome中运行，就会发现图片的请求时一个`fetch`类型。根据上面的代码我想你已经看出了我们的`fetch()`返回的是一个`promise`对象\(promise对象这里不做介绍\)，而且`response.blob()`也是一个`promise`对象。这一点是你我都值得庆幸的事情，因为`promise`让异步回调变得优美了不少\(虽然还有很多不足\)。
+  这段代码做的就是简单的异步加载本地图片，如果在 chrome 中运行，就会发现图片的请求时一个`fetch`类型。根据上面的代码我想你已经看出了我们的`fetch()`返回的是一个`promise`对象\(promise 对象这里不做介绍\)，而且`response.blob()`也是一个`promise`对象。这一点是你我都值得庆幸的事情，因为`promise`让异步回调变得优美了不少\(虽然还有很多不足\)。
 
 * 自定义请求参数
 
-  `fetch()`函数可以接受2个参数，请看下面例子:
+  `fetch()`函数可以接受 2 个参数，请看下面例子:
 
   ```js
      var myHeaders = new Headers()
@@ -104,7 +104,7 @@ categories:
 
   结果不会有任何区别的。
 
-* 发一个post请求
+* 发一个 post 请求
 
 
 
@@ -211,7 +211,7 @@ categories:
 
 ## node.js中的fetch
 
-* nodejs 自己没有`fetch`，我们通过引入[node-fetch](https://github.com/bitinn/node-fetch)或者[isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch)便可以使用。由于都是基于`promise`所以基本用法是一样的，这里我们稍微提一下它与`generator`(我们使用tj大神的[co](https://github.com/tj/co))结合使用，回调能够简单一些。运行下面例子，请先将安装需要的东西：
+* nodejs 自己没有`fetch`，我们通过引入[node-fetch](https://github.com/bitinn/node-fetch)或者[isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch)便可以使用。由于都是基于`promise`所以基本用法是一样的，这里我们稍微提一下它与`generator`(我们使用 tj 大神的[co](https://github.com/tj/co))结合使用，回调能够简单一些。运行下面例子，请先将安装需要的东西：
 
 ``` bash
 # isomorphic-fetch和node-fetch选择一个就行

@@ -10,13 +10,13 @@ categories:
   - Middleware
 ---
 
-graphql一般都是以`application/json`和`application/graphql`的形式请求的，如果要上传文件，会用到`form-data`形式，所以，我们需要写一个中间件来处理。
+graphql 一般都是以`application/json`和`application/graphql`的形式请求的，如果要上传文件，会用到`form-data`形式，所以，我们需要写一个中间件来处理。
 
 <!--more-->
 
 ## 主要思路
 
-设计一个中间件处理`multipart/form-data`请求，将文件保存在临时文件夹，然后将文件信息整合到请求上下文，供graphql解析。
+设计一个中间件处理`multipart/form-data`请求，将文件保存在临时文件夹，然后将文件信息整合到请求上下文，供 graphql 解析。
 
 首先，定义一个简单的`schema`：
 ```js
@@ -175,8 +175,8 @@ router.post('/graphql',
 
 ## 结尾
 
-可以看到，要让graphql支持某种功能，最简单的做法就是写一个中间件，处理自己的逻辑，然后graphql能接受的请求传递写下去。
+可以看到，要让 graphql 支持某种功能，最简单的做法就是写一个中间件，处理自己的逻辑，然后 graphql 能接受的请求传递写下去。
 
-完整demo文件请看[http://gost.surge.sh/#/gost/cba4553d-4239-42fe-bf3e-fc4ea35137c1](http://gost.surge.sh/#/gost/cba4553d-4239-42fe-bf3e-fc4ea35137c1)
+完整 demo 文件请看[http://gost.surge.sh/#/gost/cba4553d-4239-42fe-bf3e-fc4ea35137c1](http://gost.surge.sh/#/gost/cba4553d-4239-42fe-bf3e-fc4ea35137c1)
 
 大家可以自行想想怎么实现多文件上传。

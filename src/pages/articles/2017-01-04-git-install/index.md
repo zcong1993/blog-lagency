@@ -14,16 +14,16 @@ categories:
 
 ---
 
-几乎所有软件在不同平台安装方法都不一样，Linux有自己的包管理工具，OSX大多人也依赖homebrew进行软管理，Windows下直接下载软件安装包安装会比较方便。
+几乎所有软件在不同平台安装方法都不一样，Linux 有自己的包管理工具，OSX 大多人也依赖 homebrew 进行软管理，Windows 下直接下载软件安装包安装会比较方便。
 
-git主要使用时主要依赖于命令行工具（虽然也有图形界面软件），不过还是建议使用命令行，等你适用了之后，你会真的觉得命令行方便简洁高效了。
+git 主要使用时主要依赖于命令行工具（虽然也有图形界面软件），不过还是建议使用命令行，等你适用了之后，你会真的觉得命令行方便简洁高效了。
 
 <!--more-->
 
 ### Linux
 > 以Ubuntu为例
 
-打开terminal，输入以下命令：
+打开 terminal，输入以下命令：
 ```sh
 # update apt-get
 $ sudo apt-get update
@@ -46,11 +46,11 @@ $ brew install git
 
 ## Windows
 
-在[官网](https://git-for-windows.github.io/)下载Git安装包，是个`.exe`文件，之后大家就明白怎么做了吧。
+在[官网](https://git-for-windows.github.io/)下载 Git 安装包，是个`.exe`文件，之后大家就明白怎么做了吧。
 
-建议初学者按照默认配置点击一直点击下一步安装，因为git Windows版本会提供一个类似Linux环境的命令行工具，默认选项安装，会自动帮你注册右键菜单，右键看到`Git bash here`，然后我们就可以右键点击打开git为我们提供的命令行工具操作了。
+建议初学者按照默认配置点击一直点击下一步安装，因为 git Windows 版本会提供一个类似 Linux 环境的命令行工具，默认选项安装，会自动帮你注册右键菜单，右键看到`Git bash here`，然后我们就可以右键点击打开 git 为我们提供的命令行工具操作了。
 
-也可以使用`conemu`等Windows`cmd`增强工具。
+也可以使用`conemu`等 Windows`cmd`增强工具。
 
 ---
 

@@ -20,11 +20,11 @@ GitHub: [zcong1993/fire-todo](https://github.com/zcong1993/fire-todo)
 
 ## 认识
 
-这两天看到`vue-hackernews`使用`hackernews`api中有用到`firebase`，而且看`2016 Google IO`大会中也提到这个名词。于是就去了解了一下。
+这两天看到`vue-hackernews`使用`hackernews`api 中有用到`firebase`，而且看`2016 Google IO`大会中也提到这个名词。于是就去了解了一下。
 
 [firebase](https://console.firebase.google.com/)，可以看到`firebase`提供好多后端服务，例如`Google Analytics`，`Authentication（身份验证，帮你解决用户认证和管理）`, `Realtime Database（实时数据库，不仅仅是云端数据库）`, `Storage（云存储）`, `Hosting`。
 
-目前我用到的仅仅是`Authentication`和`Realtime Database`，本来想用`Hosting` host最终项目，结果祖国的防火墙不放过我，terminal验证总是不能通过，只能放弃了，选择了`surge.sh`。
+目前我用到的仅仅是`Authentication`和`Realtime Database`，本来想用`Hosting` host 最终项目，结果祖国的防火墙不放过我，terminal 验证总是不能通过，只能放弃了，选择了`surge.sh`。
 
 看到上面这些，可以认识到，`firebase`基本是把后端做的那一套搬到了云端，并且封装好了支持多种平台的`SDK`，也就是全盘接管你的应用后端。所以开发应用非常快速。
 
@@ -38,7 +38,7 @@ GitHub: [zcong1993/fire-todo](https://github.com/zcong1993/fire-todo)
 
 为什么是实时呢？因为`Realtime Database`的`SDK`提供一系列的事件监听机制，一旦数据更改被监听到，就会通知所有客户端更新数据，`Google`声称相应会在毫秒级别完成，这样就可以达到不同终端同步，甚至使用这个特性很容易就能构造出聊天室应用。
 
-看到这个，相信你会想到流行的前端UI框架`react`和`vue`，它们也是数据状态更新会触发UI更新，和`Realtime Database`的通知事件非常配。而且为了让我们更好的使用，官方也提供了用于框架的库，本例我使用的是[vuefire](https://github.com/vuejs/vuefire)（由vuejs官方提供）。
+看到这个，相信你会想到流行的前端 UI 框架`react`和`vue`，它们也是数据状态更新会触发 UI 更新，和`Realtime Database`的通知事件非常配。而且为了让我们更好的使用，官方也提供了用于框架的库，本例我使用的是[vuefire](https://github.com/vuejs/vuefire)（由 vuejs 官方提供）。
 
 ## Authentication 权限管理
 
@@ -61,7 +61,7 @@ GitHub: [zcong1993/fire-todo](https://github.com/zcong1993/fire-todo)
   }
 }
 ```
-这里需要的是账号的`uid`，应该是`user.uid`而不是`currentUser.uid`，具体请看[源码](https://github.com/zcong1993/fire-todo/blob/master/src/App.vue#L205)。我们实现了按照用户账号uid来存储个人数据，并且只有在登录且是本人的情况下才能读写，保证了数据的安全和隔离。
+这里需要的是账号的`uid`，应该是`user.uid`而不是`currentUser.uid`，具体请看[源码](https://github.com/zcong1993/fire-todo/blob/master/src/App.vue#L205)。我们实现了按照用户账号 uid 来存储个人数据，并且只有在登录且是本人的情况下才能读写，保证了数据的安全和隔离。
 
 最后部署应用时，需要将自己的域名添加到`Authentication`中的跳转域名白名单中，以保证安全。
 

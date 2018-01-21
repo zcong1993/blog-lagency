@@ -179,4 +179,4 @@ readAllF([readFileAsync(file), readFileAsync(file1)]);
 
 ---
 
-看过`generator`那篇文章应该会发现`async/await`和`co`封装`generator`是非常像的，因为`co`确实就是将generator封装实现`async/await`的功能。
+看过`generator`那篇文章应该会发现`async/await`和`co`封装`generator`是非常像的，因为`co`确实就是将 generator 封装实现`async/await`的功能。

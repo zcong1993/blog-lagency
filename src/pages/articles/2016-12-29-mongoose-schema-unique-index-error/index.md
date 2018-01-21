@@ -10,7 +10,7 @@ categories:
   - 笨
 ---
 
-在express中使用mongoose遇到的unique key设置无效的问题。
+在 express 中使用 mongoose 遇到的 unique key 设置无效的问题。
 
 <!--more-->
 
@@ -26,7 +26,7 @@ var UsersSchema = new Schema({
   date: { type: Date, default: Date.now }
 })
 ```
-但是我们插入2个相同的`username` 的数据时能够成功插入。
+但是我们插入 2 个相同的`username` 的数据时能够成功插入。
 
 #### 具体原因
 

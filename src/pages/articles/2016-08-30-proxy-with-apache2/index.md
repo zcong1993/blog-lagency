@@ -14,7 +14,7 @@ categories:
 
 ***
 
-最近在尝试着用node作为后端服务。由于服务器还装有Apache，默认端口80被占用，虽然node可以将服务器启动在任意端口，这样可以用域名加端口号访问，但是还是不太方便，于是就想到了用代理解决这个问题。
+最近在尝试着用 node 作为后端服务。由于服务器还装有 Apache，默认端口 80 被占用，虽然 node 可以将服务器启动在任意端口，这样可以用域名加端口号访问，但是还是不太方便，于是就想到了用代理解决这个问题。
 
 <!--more-->
 
@@ -38,7 +38,7 @@ $service apache2 restart
 
 ###### 配置虚拟host
 
-虚拟host需要在`/etc/apache2/sites-availiable`中配置，然后在`/etc/apache2/sites-enabled`中增加软链接，Apache2会把此目录下的所有`*.conf`配置加载。
+虚拟 host 需要在`/etc/apache2/sites-availiable`中配置，然后在`/etc/apache2/sites-enabled`中增加软链接，Apache2 会把此目录下的所有`*.conf`配置加载。
 
 ```sh
 $cd /etc/apache2/sites-availiable
@@ -74,7 +74,7 @@ $service apache2 restart
 
 此时就可以测试一下：
 
-1. 直接访问这个域名会出现`503 Service Unavailable`，因为我们没有开服务3000端口没有东西；
-2. 打开服务，用node起一个3000端口的服务，访问域名便和访问`zcong.xyz:3000`的结果一样。
+1. 直接访问这个域名会出现`503 Service Unavailable`，因为我们没有开服务 3000 端口没有东西；
+2. 打开服务，用 node 起一个 3000 端口的服务，访问域名便和访问`zcong.xyz:3000`的结果一样。
 
 <img src="proxy.png" alt="proxy" width="746" height="452" />

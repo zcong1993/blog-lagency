@@ -26,7 +26,7 @@ categories:
 
 ### 设置 ssh key
 
-我们使用`github`将自己的项目代码更改push到服务器时，需要验证身份。github支持两种协议，分别是`https`和`ssh`。所以每个项目均有这两种协议的地址，https协议push时需要输入用户名和密码进行身份认证，ssh则是通过私钥和公钥的方式进行身份验证，更加安全方便快捷。所以我建议在自己常用的电脑配置`ssh key`。
+我们使用`github`将自己的项目代码更改 push 到服务器时，需要验证身份。github 支持两种协议，分别是`https`和`ssh`。所以每个项目均有这两种协议的地址，https 协议 push 时需要输入用户名和密码进行身份认证，ssh 则是通过私钥和公钥的方式进行身份验证，更加安全方便快捷。所以我建议在自己常用的电脑配置`ssh key`。
 
 首先，生成`ssh key`：
 
@@ -35,17 +35,17 @@ categories:
 $ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
 # 然后一路回车
 ```
-然后，我们个人目录中的`$HOME/.ssh/`目录下会多出两个文件`id_rsa`,`id_rsa.pub`，这就是私钥和公钥，我们需要将公钥配置到github的个人账户中：
+然后，我们个人目录中的`$HOME/.ssh/`目录下会多出两个文件`id_rsa`,`id_rsa.pub`，这就是私钥和公钥，我们需要将公钥配置到 github 的个人账户中：
 
 点击`账户>Settings>SSH and GPG keys>New SSH key`,将`id_rsa.pub`中的内容复制到这里。
 
-这样ssh配置就成功了，之后我们使用ssh协议管理自己项目时就不用手动输入账号和密码验证身份了。但是这只对ssh协议有效。
+这样 ssh 配置就成功了，之后我们使用 ssh 协议管理自己项目时就不用手动输入账号和密码验证身份了。但是这只对 ssh 协议有效。
 
 ### 设置https代理
 
-由于github的代码基本都是存放在亚马逊云上面，所以在国内GFW下，速度你懂的。当我们想要查看别人代码时，会导致`git clone`速度非常慢，有时可能只有1k/s-2k/s。
+由于 github 的代码基本都是存放在亚马逊云上面，所以在国内 GFW 下，速度你懂的。当我们想要查看别人代码时，会导致`git clone`速度非常慢，有时可能只有 1k/s-2k/s。
 
-设置ssh代理非常麻烦，所以我们仅仅设置http代理，所以clone别人项目时，我建议你选择https链接，当然你也可以下载zip包，然后解压，个人觉得这样很麻烦。
+设置 ssh 代理非常麻烦，所以我们仅仅设置 http 代理，所以 clone 别人项目时，我建议你选择 https 链接，当然你也可以下载 zip 包，然后解压，个人觉得这样很麻烦。
 
 ```sh
 $ git config --global http.proxy socks5://127.0.0.1:1080
@@ -55,7 +55,7 @@ $ git config --global https.proxy socks5://127.0.0.1:1080
 
 ---
 
-注意：本文只说明如何使用，需要探究具体原理请自行Google，设置代理，请确保电脑已配置好代理工具，且在使用git时需要保证代理正常运行。
+注意：本文只说明如何使用，需要探究具体原理请自行 Google，设置代理，请确保电脑已配置好代理工具，且在使用 git 时需要保证代理正常运行。
 
 
 本系列文章使用`Gitbook`编写，并发布在 [http://gitstart.zcong.win](http://gitstart.zcong.win)

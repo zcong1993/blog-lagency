@@ -16,7 +16,7 @@ categories:
 $apt-get install redis-tools    #客户端
 $apt-get install redis-server   #服务端
 ```
-安装的版本应该是2.8左右，redis最新的稳定版本是`3.2.3`。
+安装的版本应该是 2.8 左右，redis 最新的稳定版本是`3.2.3`。
 
 <!--more-->
 
@@ -31,7 +31,7 @@ $apt-get install redis-server   #服务端
     $ cp ./src/redis-* /usr/bin/   #将服务文件放置在 /usr/bin
     $ cp redis.conf /etc/redis/    #将配置文件放置在 /etc/
 
-**注:**我是先安装低版本然后安装高版本的，所以我不知道/usr/bin中的东西有没有自动覆盖，所以手动覆盖了一次。
+**注:**我是先安装低版本然后安装高版本的，所以我不知道/usr/bin 中的东西有没有自动覆盖，所以手动覆盖了一次。
 
 #### centos 系统
 
@@ -42,11 +42,11 @@ $apt-get install redis-server   #服务端
     $ cd redis-3.2.3
     $ make
 
-脚本会自动在`/usr/bin`中生成`redis`目录，包含`bin`(核心文件)和`etc`(配置文件)，还会在`/etc/init.d/`中生成`redis`的脚本，此时直接用`service redis start|stop|restart`对redis服务端进行操作了，理论上可以全局使用`redis-cli`启动客户端了。
+脚本会自动在`/usr/bin`中生成`redis`目录，包含`bin`(核心文件)和`etc`(配置文件)，还会在`/etc/init.d/`中生成`redis`的脚本，此时直接用`service redis start|stop|restart`对 redis 服务端进行操作了，理论上可以全局使用`redis-cli`启动客户端了。
 
 #### 安装`php-redis`驱动
 
-- ubuntu系统
+- ubuntu 系统
 
     `apt-get install php7.0-redis`
 
@@ -56,21 +56,21 @@ $apt-get install redis-server   #服务端
 
 **注：**如果此方法安装不了，可以尝试下面的方法。
 
-- centos系统
+- centos 系统
 
     `wget -c https://github.com/phpredis/phpredis/archive/php7.zip`
 
     ` unzip php7.zip&&cd phpredis-php7`
 
-    `/usr/bin/phpize7.0` #根据你的系统或者PHP版本会有差别，我这个目录是ubuntu上面的,如果没有此文件先安装`php7.0-dev`
+    `/usr/bin/phpize7.0` #根据你的系统或者 PHP 版本会有差别，我这个目录是 ubuntu 上面的,如果没有此文件先安装`php7.0-dev`
 
     `./configure --with-php-config=/usr/local/php/bin/php-config`
 
     `service php-fpm restart`
 
-我的centos用的是nginx加php-fpm，所以用`service php-fpm restart`重启服务。
+我的 centos 用的是 nginx 加 php-fpm，所以用`service php-fpm restart`重启服务。
 
-- 此时在`phpinfo`中就能看到redis了。
+- 此时在`phpinfo`中就能看到 redis 了。
 
 #### 简单测试`php-redis`
 
@@ -83,7 +83,7 @@ $apt-get install redis-server   #服务端
         echo $redis->get('redis');
     ?>
 
-`php redis-test.php`可以看到redis-test。或者`redis-cli`输入`get redis`可以看到结果。就说明没问题了。
+`php redis-test.php`可以看到 redis-test。或者`redis-cli`输入`get redis`可以看到结果。就说明没问题了。
 
 
 

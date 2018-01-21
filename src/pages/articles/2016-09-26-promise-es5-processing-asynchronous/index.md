@@ -20,7 +20,7 @@ categories:
 
 > Promise 对象是一个返回值的代理，这个返回值在promise对象创建时未必已知。它允许你为异步操作的成功或失败指定处理方法。 这使得异步方法可以像同步方法那样返回值：异步方法会返回一个包含了原返回值的 promise 对象来替代原返回值。（引用自[MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)）
 
-Promise对象的生命周期只有3种状态：
+Promise 对象的生命周期只有 3 种状态：
 
 * pending: 初始状态，也就是异步请求得到结果之前的状态
 
@@ -151,7 +151,7 @@ Promise.all([
 
 <img src="promise.png" alt="promise" width="401" height="135" />
 
-可以看到，函数同时被执行了3次，之后结果都被输出出来了。
+可以看到，函数同时被执行了 3 次，之后结果都被输出出来了。
 
 ---
 

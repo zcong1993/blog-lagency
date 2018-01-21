@@ -20,9 +20,9 @@ categories:
 
 ##### 1.windows系统
 
-windows版提供`.msi`文件，所以安装是傻瓜式安装。去官网[下载](https://www.mongodb.com/download-center?jmp=docs)符合自己系统的版本，然后双击打开，像安装别的软件一样安装就可以了。
+windows 版提供`.msi`文件，所以安装是傻瓜式安装。去官网[下载](https://www.mongodb.com/download-center?jmp=docs)符合自己系统的版本，然后双击打开，像安装别的软件一样安装就可以了。
 
-这时候mongodb就安装在你的电脑了，进入mongodb文件夹，默认应该在`C:\Program Files`中，我把它移动到了D盘。此时我们就可以在本地建一个mongodb数据库服务了。我的目录是`D:\MongoDB`。
+这时候 mongodb 就安装在你的电脑了，进入 mongodb 文件夹，默认应该在`C:\Program Files`中，我把它移动到了 D 盘。此时我们就可以在本地建一个 mongodb 数据库服务了。我的目录是`D:\MongoDB`。
 
 首先，在你认为合适的位置建一个文件夹
 
@@ -33,7 +33,7 @@ D:\DATA
 └─log
  ```
 
- db目录用来存放数据，cfg目录存放启动相关配置文件，log目录存放运行日志文件。接着在cfg文件夹创建一个`mongo.cfg`配置文件：
+ db 目录用来存放数据，cfg 目录存放启动相关配置文件，log 目录存放运行日志文件。接着在 cfg 文件夹创建一个`mongo.cfg`配置文件：
 
  ```sh
  #cfg/mongo.cfg
@@ -48,14 +48,14 @@ D:\DATA
 ```sh
  D:\MongoDB\bin\mongod.exe --config D:\DATA\cfg\mongo.cfg
 ```
-这样数据库服务就启动了，windows不适合做服务器，所以也不建议将mongodb服务作为后台守护进程使用，所以我们终端不能关闭。这时候log文件夹下面就会生成log文件，打开文件可以看到，我们的服务已经在27017（默认）端口等待连接了。接着测试一下连接吧，打开另一个终端：
+这样数据库服务就启动了，windows 不适合做服务器，所以也不建议将 mongodb 服务作为后台守护进程使用，所以我们终端不能关闭。这时候 log 文件夹下面就会生成 log 文件，打开文件可以看到，我们的服务已经在 27017（默认）端口等待连接了。接着测试一下连接吧，打开另一个终端：
 
 ```sh
  D:\MongoDB\bin\mongo.exe
 ```
-出现和mysql数据库相同的`>`标识就说明成功了。
+出现和 mysql 数据库相同的`>`标识就说明成功了。
 
-为了使用方便也可以将bin目录加入环境变量，这样可以在任何地让运行`mongo.exe`连接数据库，`.exe`省略掉也是可以的。
+为了使用方便也可以将 bin 目录加入环境变量，这样可以在任何地让运行`mongo.exe`连接数据库，`.exe`省略掉也是可以的。
 
 还可以为数据库启动写一个脚本:`mongoserver.bat`
 ```sh
@@ -69,25 +69,25 @@ pause
 
 ##### 2.ubuntu系统
 
-linux系统可以选择去github上面下载软件源码自行编译安装，我试了，很遗憾因为依赖问题放弃了。最终还是选择了官方的镜像源安装。
+linux 系统可以选择去 github 上面下载软件源码自行编译安装，我试了，很遗憾因为依赖问题放弃了。最终还是选择了官方的镜像源安装。
 
 以[ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)安装为例，我用的是`ubuntu 16.04`版本。
 
-首先，获取官方的key
+首先，获取官方的 key
 ```sh
 $sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 ```
-然后，增加一个mongodb的镜像源地址
+然后，增加一个 mongodb 的镜像源地址
 ```sh
 $echo &quot;deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 ```
-更新镜像源，安装mongodb
+更新镜像源，安装 mongodb
 ```sh
 $sudo apt-get update
 $sudo apt-get install -y mongodb-org
 ```
 
-安装之后，服务执行文件被放置在`/usr/bin`下，配置文件为`/etc/mongod.conf`，可以修改配置文件然后执行`$/usr/bin/mongod --quiet --config /etc/mongod.conf`启动服务，也可以创建系统服务(仅16.04可用，来自官方说明),创建文件`/lib/systemd/system/mongod.service`:
+安装之后，服务执行文件被放置在`/usr/bin`下，配置文件为`/etc/mongod.conf`，可以修改配置文件然后执行`$/usr/bin/mongod --quiet --config /etc/mongod.conf`启动服务，也可以创建系统服务(仅 16.04 可用，来自官方说明),创建文件`/lib/systemd/system/mongod.service`:
 ```sh
 [Unit]
 Description=High-performance, schema-free document-oriented database
@@ -114,6 +114,6 @@ WantedBy=multi-user.target
 &gt; db.test.insert({name: &#039;zc&#039;})          #往test数据表中插入一条数据
 &gt; db.test.find()                        #查询test数据表的所有结果
 ```
-简单说明一下，mongodb中数据库和表不用提前建立，`use 数据库`的时候直接建立，并切换至数据库，`show dbs`可以查询所有数据库，在数据库下面`show collections`可以查看数据集（相当于数据表，个人理解）。
+简单说明一下，mongodb 中数据库和表不用提前建立，`use 数据库`的时候直接建立，并切换至数据库，`show dbs`可以查询所有数据库，在数据库下面`show collections`可以查看数据集（相当于数据表，个人理解）。
 
 具体操作请查看官方文档。

@@ -12,7 +12,7 @@ categories:
 
 > 本文需要您对graphql有基本的了解
 
-graphql服务端有两个很方便的库，[express-graphql](https://github.com/graphql/express-graphql) 和 [apollo-server](https://github.com/apollographql/apollo-server)。
+graphql 服务端有两个很方便的库，[express-graphql](https://github.com/graphql/express-graphql) 和 [apollo-server](https://github.com/apollographql/apollo-server)。
 
 `express-graphql`默认支持`application/graphql`， 而`apollo-server`中的库都不支持，我们可以自行实现。
 
@@ -54,7 +54,7 @@ app.use(router.routes())
 app.listen(3000, () => console.log(`listening on port 3000`))
 ```
 
-打开`http://localhost:3000/graphql`，测试一下graphiql，请求：
+打开`http://localhost:3000/graphql`，测试一下 graphiql，请求：
 
 ```json
 {
@@ -62,7 +62,7 @@ app.listen(3000, () => console.log(`listening on port 3000`))
 }
 ```
 
-使用http请求(application/json)：
+使用 http 请求(application/json)：
 ```js
 fetch('http://localhost:3000/graphql', {
     method: 'post',
@@ -86,9 +86,9 @@ fetch('http://localhost:3000/graphql', {
 
 ## graphql中间件
 
-bodyparser处理`application/json`请求，其实就是从请求中得到原始body然后parse，将结果传给`ctx.request.body`，同理我们要做的就是将请求包装一层，然后传给`ctx.request.body`。
+bodyparser 处理`application/json`请求，其实就是从请求中得到原始 body 然后 parse，将结果传给`ctx.request.body`，同理我们要做的就是将请求包装一层，然后传给`ctx.request.body`。
 
-首先，我们使用现成的bodyparser以处理`text/plain`请求的方式得到请求体；
+首先，我们使用现成的 bodyparser 以处理`text/plain`请求的方式得到请求体；
 ```js
 # bodyparser需要这样使用
 app.use(bodyParser({
@@ -109,7 +109,7 @@ const parseGraphql = async (ctx, next) => {
   await next()
 }
 ```
-中间件要放在bodyparser之后，最好不要放在全局。
+中间件要放在 bodyparser 之后，最好不要放在全局。
 ```js
 router.post('/graphql', parseGraphql, graphqlKoa({
   schema: schema,

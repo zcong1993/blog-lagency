@@ -3,6 +3,7 @@ const Promise = require('bluebird')
 const path = require('path')
 const select = require('unist-util-select')
 const fs = require('fs-extra')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
@@ -44,4 +45,26 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       })
     )
   })
+}
+
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === 'build-css') {
+    config.removeLoader('css')
+    config.loader(`css`, {
+      test: /\.css$/,
+      exclude: [/\.module\.css$/],
+      loader: ExtractTextPlugin.extract([
+        {
+          loader: 'css',
+          options: {
+            minisize: true,
+            discardComments: {
+              removeAll: true,
+            },
+          },
+        },
+        `postcss`,
+      ]),
+    })
+  }
 }

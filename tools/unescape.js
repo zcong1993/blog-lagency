@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { promisify } = require('util')
-const glob = require('glob')
+const globby = require('globby')
 
 const unescapeFile = async file => {
   const content = await promisify(fs.readFile)(file, 'utf8')
@@ -18,7 +18,7 @@ const unescapeFile = async file => {
   return promisify(fs.writeFile)(file, unescaped)
 }
 
-promisify(glob)('src/pages/articles/**/*.md')
+globby('src/pages/articles/**/*.md')
   .then(files => Promise.all(files.map(file => unescapeFile(file))))
   .then(() => console.log('all done'))
   .catch(console.log)

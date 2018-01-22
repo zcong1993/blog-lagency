@@ -56,8 +56,8 @@ $ brew install git
 
 最后，我们需要配置两个必要的身份标识：
 ```sh
-$ git config --global user.name &quot;your username&quot;
-$ git config --global user.email &quot;your email&quot;
+$ git config --global user.name "your username"
+$ git config --global user.email "your email"
 ```
 更多配置见下一篇。
 

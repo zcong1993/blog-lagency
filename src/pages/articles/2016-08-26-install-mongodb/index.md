@@ -79,7 +79,7 @@ $sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 ```
 然后，增加一个 mongodb 的镜像源地址
 ```sh
-$echo &quot;deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+$echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 ```
 更新镜像源，安装 mongodb
 ```sh
@@ -110,9 +110,9 @@ WantedBy=multi-user.target
 
 连接数据库，选择`test`数据库，并插入一条数据：
 ```sh
-&gt; use test                              #选择数据库
-&gt; db.test.insert({name: &#039;zc&#039;})          #往test数据表中插入一条数据
-&gt; db.test.find()                        #查询test数据表的所有结果
+> use test                              #选择数据库
+> db.test.insert({name: 'zc'})          #往test数据表中插入一条数据
+> db.test.find()                        #查询test数据表的所有结果
 ```
 简单说明一下，mongodb 中数据库和表不用提前建立，`use 数据库`的时候直接建立，并切换至数据库，`show dbs`可以查询所有数据库，在数据库下面`show collections`可以查看数据集（相当于数据表，个人理解）。
 

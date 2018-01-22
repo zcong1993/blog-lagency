@@ -1,23 +1,24 @@
-const fs = require(fs)
-const glob = require('glob')
+const fs = require('fs')
 const { promisify } = require('util')
+const glob = require('glob')
 
-const escapeFile = async file => {
-  const content = await fs.readFile(file, 'utf8')
+const unescapeFile = async file => {
+  const content = await promisify(fs.readFile)(file, 'utf8')
   const unescaped = content
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '')
+    .replace(/&quot;/g, '"')
     .replace(/&#039;/g, "'")
   if (content === unescaped) {
     console.log(`${file} no change.`)
     return Promise.resolve()
   }
-  console.log(`write file ${file}.`)
-  return fs.writeFile(file, unescaped)
+  console.log(`write file ${file}`)
+  return promisify(fs.writeFile)(file, unescaped)
 }
 
-promisify(glob)('src/pages/articles/**/*.md').then(console.log)
-
-escapeFile('src/pages/articles/koa-graphql-support-image-upload/index.md')
+promisify(glob)('src/pages/articles/**/*.md')
+  .then(files => Promise.all(files.map(file => unescapeFile(file))))
+  .then(() => console.log('all done'))
+  .catch(console.log)

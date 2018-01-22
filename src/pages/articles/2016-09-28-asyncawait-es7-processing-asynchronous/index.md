@@ -32,7 +32,7 @@ $npm install --save-dev babel-preset-es2017
 
 //babel-node的配置文件
 
-$echo &#039;{ &quot;presets&quot;: [&quot;es2017&quot;] }&#039; &gt; .babelrc
+$echo '{ "presets": ["es2017"] }' > .babelrc
 
 ```
 

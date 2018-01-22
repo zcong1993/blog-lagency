@@ -232,7 +232,7 @@ co(function* (){
 
 ```
 
-for 循环方式&#039;同时&#039;保存 10 个海报
+for 循环方式'同时'保存 10 个海报
 
 ``` js
 
@@ -374,7 +374,7 @@ https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p1910813120.jpg
 
 #### 真正的异步处理方式
 
-&gt; 原理其实非常简单，有几个异步就用几个 Promise.all()方法，始终保持并发是用 Promise.all()执行的即可，代码如下：
+> 原理其实非常简单，有几个异步就用几个 Promise.all()方法，始终保持并发是用 Promise.all()执行的即可，代码如下：
 
 ``` js
 

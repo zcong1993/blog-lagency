@@ -32,7 +32,7 @@ categories:
 
 ```sh
 # windows 需要在gitbash环境下
-$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 # 然后一路回车
 ```
 然后，我们个人目录中的`$HOME/.ssh/`目录下会多出两个文件`id_rsa`,`id_rsa.pub`，这就是私钥和公钥，我们需要将公钥配置到 github 的个人账户中：

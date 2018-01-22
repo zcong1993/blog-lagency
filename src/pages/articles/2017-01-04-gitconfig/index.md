@@ -16,8 +16,8 @@ categories:
 
 上一节安装的结尾我们配置了两项信息：
 ```sh
-$ git config --global user.name &quot;your username&quot;
-$ git config --global user.email &quot;your email&quot;
+$ git config --global user.name "your username"
+$ git config --global user.email "your email"
 ```
 也就是我们的用户名和邮箱，这也是我们信息的标识符，也就是 git 最基本的配置项。
 
@@ -40,21 +40,21 @@ email = your email
 [color]
 ui = auto
 [alias]
-ll = log --pretty=format:\&quot;%h - %an, %ar : %s\&quot;
+ll = log --pretty=format:\"%h - %an, %ar : %s\"
 pushos = push origin master
 pullos = pull origin master
 subpush = subtree push --prefix=app origin gh-pages
 subpushd = subtree push --prefix=dist origin gh-pages
 st = status
 adda = add -A
-comb = commit -m &quot;make it better&quot;
+comb = commit -m "make it better"
 ```
 可以看到是一个`ini`文件，我们配置的用户名和邮箱信息出现在这里了。`user`是我们的用户信息，`color`是让 git 在终端高亮显示信息，`alias`则是我配置的指令别名，比如此时输入`git st`就是`git status`了，能够更方便快捷的使用 git 命令。
 需要增加配置时，在相应属性下面增加键值对就行。
 * 命令配置
 ```sh
 # git config 全局	属性.配置键 配置值
-$ git config --global alias.st &quot;status&quot;
+$ git config --global alias.st "status"
 ```
 `--global`参数表示我们是全局配置，指令很简单。如果指令没有报错，我们就可以看到配置文件中相应的属性值改变或增加了。
 需要配置项目配置时，不要加`--global`参数，需要保证你在需要配置的项目文件夹下运行指令。

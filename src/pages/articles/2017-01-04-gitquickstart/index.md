@@ -24,7 +24,7 @@ git 的项目都是以项目文件夹作为一个版本管理仓库，现在我�
 
 ```sh
 # mkdir
-$ mkdir gitstart &amp;&amp; cd gitstart
+$ mkdir gitstart && cd gitstart
 $ git init
 Initialized empty Git repository in /path/to/your/project/gitstart/.git/
 ```
@@ -38,8 +38,8 @@ Initialized empty Git repository in /path/to/your/project/gitstart/.git/
 
 由于我们文件夹现在除了 git 自己的文件外没有其他的，所以我们的工作区是干净的，我们创建一个文件。
 ```sh
-# unix创建test.txt并写入单词&#039;test&#039;, windows下请确保在git bash中使用
-$ echo &#039;test&#039;&gt;test.txt
+# unix创建test.txt并写入单词'test', windows下请确保在git bash中使用
+$ echo 'test'>test.txt
 ```
 然后我们使用`git status`查看一下工作区状态：
 ```sh
@@ -48,11 +48,11 @@ On branch master
 Initial commit
 
 Untracked files:
-(use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+(use "git add <file>..." to include in what will be committed)
 
 test.txt
 # 没有任何可以提交的内容，但是发现了没有追踪的文件
-nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+nothing added to commit but untracked files present (use "git add" to track)
 ```
 可以看到 git 提示我们这些信息，并且建议我们使用`git add <file>`命令让我们建立文件追踪。这样 git 就能监听我们的`test.txt`文件了。
 ```sh
@@ -65,7 +65,7 @@ On branch master
 Initial commit
 
 Changes to be committed:
-(use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+(use "git rm --cached <file>..." to unstage)
 
 new file: test.txt
 ```

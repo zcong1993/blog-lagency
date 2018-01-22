@@ -28,12 +28,12 @@ categories:
 # 创建dev分支
 $ git branch dev
 # 在master分支提交一次版本, 更改test.txt文件
-$ echo &#039;test master&#039;&gt;test.txt
-$ git commit -am &#039;master change&#039;
+$ echo 'test master'>test.txt
+$ git commit -am 'master change'
 # 切换到dev版本，更改test.txt文件
 $ git checkout dev
-$ echo &#039;test dev&#039;&gt;test.txt
-$ git commit -am &#039;dev change&#039;
+$ echo 'test dev'>test.txt
+$ git commit -am 'dev change'
 # 尝试合并dev分支到master
 $ git checkout master
 $ git merge dev
@@ -73,10 +73,10 @@ cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\
 dev
 test dev
 
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD # master分支状态
+<<<<<<< HEAD # master分支状态
 master
 ======= # 分隔符
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev # dev分支状态
+>>>>>>> dev # dev分支状态
 ```
 我们也可以根据自己的状态手动修改文件，比如我们只留下 master 分支的版本，我们需要额外手动删除这些 git 为我们生成的标识符。当然有时冲突非常复杂，所以就会有好多上面的那种代码块，所以还是建议使用工具解决冲突。
 

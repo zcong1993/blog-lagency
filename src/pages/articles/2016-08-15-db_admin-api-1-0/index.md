@@ -15,11 +15,11 @@ categories:
 #### 目录结构
 
 ```
-server---&gt;				#服务端文件，需要放在能够操作数据库的服务器
+server--->				#服务端文件，需要放在能够操作数据库的服务器
 		DB.php			#pdo操作数据库的核心文件
 		db_api.php		#DB_admin为http请求做的缓冲层
 index.html				#DB_admin前台管理界面
-src---&gt;					#前台管理页面需要的文件
+src--->					#前台管理页面需要的文件
 		css				#前台需要引入的css文件
 		js				#前台需要引入的js文件
 ```

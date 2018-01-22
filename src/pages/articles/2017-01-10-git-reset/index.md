@@ -24,13 +24,13 @@ categories:
 ```sh
 $ git log
 commit 85343597274e6796ad310b10c5730d44efcd9add
-Author: zcong1993 &lt;1005997919@qq.com&gt;
+Author: zcong1993 <1005997919@qq.com>
 Date: Sat Jan 7 17:06:53 2017 +0800
 
 fix a comment space error
 
 commit a1d27e18bc3519721969afd12c8b1ff50df2edfa
-Author: zcong1993 &lt;1005997919@qq.com&gt;
+Author: zcong1993 <1005997919@qq.com>
 Date: Sat Jan 7 17:03:54 2017 +0800
 
 add some comments of conf.js

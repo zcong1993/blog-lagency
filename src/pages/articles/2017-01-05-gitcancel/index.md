@@ -38,7 +38,7 @@ categories:
 ```sh
 On branch master
 Changes to be committed:
-(use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+(use "git reset HEAD <file>..." to unstage)
 
 modified: test.txt
 ```

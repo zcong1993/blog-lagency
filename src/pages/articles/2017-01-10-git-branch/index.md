@@ -34,7 +34,7 @@ dev
 此时我么可以使用`git checkout dev`切换到`dev`分支：
 ```sh
 $ git checkout dev
-Switched to branch &#039;dev&#039;
+Switched to branch 'dev'
 # 此时已经切换到了dev分支了
 ```
 
@@ -49,9 +49,9 @@ Switched to branch &#039;dev&#039;
 # 切换到dev分支
 $ git checkout dev
 # 进行版本提交
-$ echo &#039;dev branch&#039;&gt;dev.txt
+$ echo 'dev branch'>dev.txt
 $ git add .
-$ git commit -m &quot;dev commit&quot;
+$ git commit -m "dev commit"
 # 切换到master分支查看
 $ git checkout master
 # 此时我们会发现dev.txt消失了

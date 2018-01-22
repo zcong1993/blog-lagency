@@ -46,16 +46,16 @@ $vim node.conf
 ```
 node.conf
 ```
-&lt;VirtualHost *:80&gt;
+<VirtualHost *:80>
 
 	ServerName node.zcong.xyz                          #我们要映射的域名
 
 	ProxyRequests Off
 	ProxyVia Off
 
-	&lt;Proxy *&gt;
+	<Proxy *>
 	    Require all granted
-	&lt;/Proxy&gt;
+	</Proxy>
 
 	ProxyPass / http://localhost:3000                  #将本机3000端口根目录
 	ProxyPassReverse / http://localhost:3000           #映射到此域名根目录
@@ -63,7 +63,7 @@ node.conf
 	ErrorLog /var/log/apache2/node/error.log
 	CustomLog /var/log/apache2/node/access.log combined
 
-&lt;/VirtualHost&gt;
+</VirtualHost>
 ```
 建立软链接
 ```sh

@@ -81,8 +81,8 @@ function processRequest(request, { uploadDir } = {}) {
 ```js
 function uploadKoa(options) {
   return async function(ctx, next) {
-    // 仅处理header为&#039;multipart/form-data&#039;的请求
-    if (ctx.request.is(&#039;multipart/form-data&#039;)) {
+    // 仅处理header为'multipart/form-data'的请求
+    if (ctx.request.is('multipart/form-data')) {
       // 将结果传入上下文
       ctx.request.body = await processRequest(ctx.req, options)
     }

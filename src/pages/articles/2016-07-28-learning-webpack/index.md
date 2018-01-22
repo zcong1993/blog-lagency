@@ -10,7 +10,7 @@ categories:
 
 <h3>webpack</h3>
 
-<blockquote><ul><li>替代 browserify </li></ul><blockquote><p><code>browserify ./main.js &gt; bundle.js</code> =&gt;  </p><pre><code>   module.exports = {
+<blockquote><ul><li>替代 browserify </li></ul><blockquote><p><code>browserify ./main.js > bundle.js</code> =>  </p><pre><code>   module.exports = {
         entry: './main.js',
         output: {
         filename: 'bundle.js'

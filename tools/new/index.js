@@ -9,29 +9,30 @@ const format = tinyDate(`{YYYY}-{MM}-{DD}`)
 const initConfig = argv => {
   const defaultConfig = {
     title: 'new Post',
-    date: new Date(argv.date || ''),
+    date: argv.date ? new Date(argv.date) : new Date(),
     layout: 'post',
     categories: ['default'],
   }
 
-  const normalizedname = defaultConfig.title
-    .toLowerCase()
-    .split(' ')
-    .join('-')
-
-  defaultConfig.path = `/${normalizedname}/`
-  defaultConfig.filePath = `${format(defaultConfig.date)}-${normalizedname}`
-  defaultConfig.date = tinyDate(`{YYYY}-{MM}-{DD} {HH}:{mm}:{ss}`)(
-    defaultConfig.date
-  )
   delete argv.date
   delete argv._
 
   const config = Object.assign({}, defaultConfig, argv)
+
+  const normalizedname = config.title
+    .toLowerCase()
+    .split(' ')
+    .join('-')
+
+  config.path = `/${normalizedname}/`
+  config.filePath = `${format(config.date)}-${normalizedname}`
+  config.date = tinyDate(`{YYYY}-{MM}-{DD} {HH}:{mm}:{ss}`)(config.date)
+
   config.categories = Array.isArray(config.categories)
     ? [...config.categories]
     : [config.categories]
   config.categories = [...new Set(config.categories)]
+
   return config
 }
 

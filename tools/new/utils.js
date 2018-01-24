@@ -11,8 +11,7 @@ exports.mkdir = p => {
 
 exports.writeFile = fs.writeFileSync
 
-const tpl = `
----
+const tpl = `---
 title: {{title}}
 date: "{{date}}"
 layout: {{layout}}

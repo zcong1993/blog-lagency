@@ -95,6 +95,7 @@
     "lint:textfix": "textlint --fix src/pages/**/index.md",
     "precommit": "lint-staged",
     "test": "yarn lint",
-    "unescape": "node tools/unescape.js"
+    "unescape": "node tools/unescape.js",
+    "new": "node tools/new/index.js"
   }
 }

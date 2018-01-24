@@ -83,3 +83,5 @@ steps:
 这样我们的 `circleci` 执行任务时间就省了不少.
 
 *注意:* 缓存的 `save` 和 `restore` 其实是上传下载同步到 circleci 自己的服务器上, 走的是`https`, 所以应该有一部分人为了节约`docker`镜像拉取时间, 而使用相应镜像的 `alpine` 版本, 确实 `alpine` 版本的镜像会小很多, 但是此版本默认都不会安装 `ca-certificates` 这将导致发送 `https` 请求收到影响, 会使得缓存拉取和上传都不正常, 所以如果要做这方面的优化最好自己构建安装了`ca-certificates` 的 docker 镜像.
+
+例子请看 [https://github.com/zcong1993/circleci-samples/tree/master/demos/start](https://github.com/zcong1993/circleci-samples/tree/master/demos/start)

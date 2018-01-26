@@ -1,5 +1,5 @@
 ---
-title: circleci 系列1 - 起步
+title: circleci 系列2 - 起步
 date: "2018-01-21"
 layout: post
 path: "/circleci-start/"

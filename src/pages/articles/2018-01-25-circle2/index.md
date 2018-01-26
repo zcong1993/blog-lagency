@@ -1,5 +1,5 @@
 ---
-title: circleci 系列1 - compose
+title: circleci 系列2 - compose
 date: "2018-01-25 18:39:08"
 layout: post
 path: "/circle2/"

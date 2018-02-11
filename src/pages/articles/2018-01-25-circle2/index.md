@@ -1,6 +1,6 @@
 ---
 title: circleci 系列2 - compose
-date: "2018-01-25 18:39:08"
+date: "2018-01-25"
 layout: post
 path: "/circle2/"
 categories:

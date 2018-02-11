@@ -9,7 +9,7 @@ const format = tinyDate(`{YYYY}-{MM}-{DD}`)
 const initConfig = argv => {
   const defaultConfig = {
     title: 'new Post',
-    date: argv.date ? new Date(argv.date) : new Date(),
+    date: format(argv.date ? new Date(argv.date) : new Date()),
     layout: 'post',
     categories: ['default'],
   }

@@ -44,7 +44,7 @@ jobs:
       # Download and cache dependencies
       - *restore_cache
       - run: yarn
-      - run: rm -rf node_modules/.cache
+      - run: yarn clean
       - *save_cache
       - run:
           name: build

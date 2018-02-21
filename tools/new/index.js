@@ -25,8 +25,7 @@ const initConfig = argv => {
     .join('-')
 
   config.path = `/${normalizedname}/`
-  config.filePath = `${format(config.date)}-${normalizedname}`
-  config.date = tinyDate(`{YYYY}-{MM}-{DD} {HH}:{mm}:{ss}`)(config.date)
+  config.filePath = `${config.date}-${normalizedname}`
 
   config.categories = Array.isArray(config.categories)
     ? [...config.categories]

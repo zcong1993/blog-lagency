@@ -45,7 +45,7 @@
     "gh-pages": "^1.1.0",
     "globby": "^8.0.1",
     "handlebars": "^4.0.11",
-    "husky": "^0.14.3",
+    "husky": "^0.15.0-rc.9",
     "lint-staged": "^7.0.0",
     "normalize.css": "^8.0.0",
     "prettier": "^1.10.2",
@@ -90,13 +90,17 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|scss)\"",
-    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "lint": "eslint --ext .js,.jsx .",
     "lint:text": "textlint src/pages/**/index.md",
     "lint:textfix": "textlint --fix src/pages/**/index.md",
-    "precommit": "lint-staged",
     "test": "yarn lint",
     "unescape": "node tools/unescape.js",
     "new": "node tools/new/index.js",
     "clean": "rm -rf .cache && rm -rf ./node_modules/.cache"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
